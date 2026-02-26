@@ -76,5 +76,15 @@ chmod 644 "$FICHERO_CEPH"
 
 echo "El archivo $FICHERO_CEPH ha sido configurado correctamente."
 
+# Quitamos el aviso de no tener subscription activada que aparece al iniciar.
+
+FILE="/usr/share/javascript/proxmox-widget-toolkit/proxmoxlib.js"
+
+cp "$FILE" "$FILE.bak"
+
+sed -i "s/res\.data\.status\.toLowerCase() !== 'active'/res.data.status.toLowerCase() === 'active'/g" "$FILE"
+
+echo "Reemplazo completado."
+
 # Si existen, el script termina silenciosamente (exit 0)
 exit 0
