@@ -79,12 +79,13 @@ echo "El archivo $FICHERO_CEPH ha sido configurado correctamente."
 # Quitamos el aviso de no tener subscription activada que aparece al iniciar.
 
 FILE="/usr/share/javascript/proxmox-widget-toolkit/proxmoxlib.js"
+EXTENSION=".bak.$(date +%d%m%y%H%M%S)"
 
-cp "$FILE" "$FILE.bak"
-
+cp "$FILE" "$FILE.bak.$EXTENSION"
+echo "Backing proxmoxlib.js file in proxmoxlib.js.$EXTENSION"
 sed -i "s/res\.data\.status\.toLowerCase() !== 'active'/res.data.status.toLowerCase() === 'active'/g" "$FILE"
-
-echo "Reemplazo completado."
+echo "Banner No-Subscription deleted"
+echo
 
 # Si existen, el script termina silenciosamente (exit 0)
 exit 0
