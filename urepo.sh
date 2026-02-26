@@ -45,7 +45,7 @@ EOF
 
 # Change permissions to make it readable by the system (optional but recommended)
 chmod 644 "$FICHERO"
-echo "The $FILE file has been successfully created/initialized for Proxmox 9 (Trixie)."
+echo "The $FICHERO file has been successfully created/initialized."
 
 # Define the file paths
 FICHERO_CEPH="/etc/apt/sources.list.d/ceph.sources"
