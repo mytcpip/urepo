@@ -1,0 +1,4 @@
+From PROXMOX 9.X shell, copy and Execute next command:
+
+# bash -c "$(curl -fsSL https://raw.githubusercontent.com/mytcpip/urepo/refs/heads/main/urepo.sh)"
+
