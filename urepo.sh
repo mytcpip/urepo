@@ -78,7 +78,7 @@ EXTENSION=".bak.$(date +%d%m%y%H%M%S)"
 
 cp "$FILE" "$FILE.bak.$EXTENSION"
 echo "Backing proxmoxlib.js file with proxmoxlib.js.$EXTENSION"
-sed -i "s/res\.data\.status\.toLowerCase() !== 'active'/res.data.status.toLowerCase() === 'active'/g" "$FILE"
+sed -i "s/res\.data\.status\.toLowerCase() !== 'active'/res.data.status.toLowerCase() == 'active'/g" "$FILE"
 echo "Banner No-Subscription deleted"
 echo
 
